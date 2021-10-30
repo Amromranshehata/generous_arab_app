@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="row">
+        {% for guest in guests %}
+            <div class="card bg-info mb-3" style="width: 20rem;">
+                {% if guest["username"] == trusted_guest["username"] %}
+                    <h3><span class="badge badge-warning">Best Guest</span></h3>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ guest['name'] }}</h5>
+                    {% for service in guest["services"] %}
+                        <span class="badge badge-pill badge-primary">{{ service }}</span>
+                    {% endfor %}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ guest['username'] }}</li>
+                    <li class="list-group-item">{{ guest['location'] }}</li>
+                    <li class="list-group-item">
+                        <a href="" class="btn btn-warning">
+                            {{ guest["overall_ratings"] }}
+                        </a>
+                    </li>
+                </ul>
+                <div class="list-group-item">
+                    <a href="{{ url_for('review', user_id=guest['id']) }}" class="btn btn-primary">Review</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

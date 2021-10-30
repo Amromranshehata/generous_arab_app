@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.home-page {
+}
+
+.green {
+    background: #009739;
+}
+
+.white {
+    background: white;
+}
+
+.black {
+    background: black;
+    color: white;
+}
+
+.red {
+    background: #EF3340;
+    height: 18.8rem;
+    position: relative;
+    left: 15px;
+}
+
+.buttons {
+    display: flex;
+    align-items: space-between;
+}
