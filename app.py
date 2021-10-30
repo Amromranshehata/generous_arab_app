@@ -18,7 +18,7 @@ def home():
     trusted_guest = reduce(lambda x, y: x if x["overall_ratings"] > y["overall_ratings"] else y,
                            [usr for usr in guests])
     generous_arab = reduce(lambda x, y: x if x["overall_ratings"] > y["overall_ratings"] else y,
-                       [usr for usr in hosts])
+                           [usr for usr in hosts])
     if session.get("user_id"):
         user_type = session.get("user_type")
         if user_type == "guest":
@@ -64,7 +64,7 @@ def register():
             "password": request.form.get("password"),
             "location": request.form.get("location"),
             "rating": [],
-            "overall_ratings": None
+            "overall_ratings": 5
         }
 
         user_type = request.form.get("user_type")
